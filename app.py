@@ -1,4 +1,5 @@
 from flask import Flask, Blueprint
+import routes
 
 
 def create_app():
@@ -6,9 +7,7 @@ def create_app():
 
     home = Blueprint('home', __name__)
 
-    @app.route('/')
-    def index():
-        return "Olá, Flask!"
+    routes.init_app(home)
 
     app.register_blueprint(home)
 
