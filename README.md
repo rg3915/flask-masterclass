@@ -31,3 +31,12 @@ FLASK_ENV=development flask run  # ou
 ```
 
 Ou você pode usar o [python-dotenv](https://pypi.org/project/python-dotenv/) para gerenciar as variáveis de ambiente.
+
+### Testes
+
+Para rodar os testes digite
+
+```
+ward
+```
+
