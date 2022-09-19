@@ -25,5 +25,9 @@ pip install -r requirements.txt
 
 flask run
 flask routes
+
+FLASK_ENV=development flask run  # ou
+# FLASK_DEBUG=development flask run
 ```
 
+Ou você pode usar o [python-dotenv](https://pypi.org/project/python-dotenv/) para gerenciar as variáveis de ambiente.
