@@ -40,3 +40,6 @@ Para rodar os testes digite
 ward
 ```
 
+### Banco de dados
+
+Vamos usar o [flask-SQLAlchemy](https://flask-sqlalchemy.palletsprojects.com/en/2.x).
