@@ -16,9 +16,13 @@
 <body>
   <main>
     <h1>Olá, Flask!</h1>
-    {% for post in posts %}
-      <h4>{{ post.title }}</h4>
-    {% endfor %}
+    {% if posts %}
+      {% for post in posts %}
+        <h4>{{ post.title }}</h4>
+      {% endfor %}
+    {% else %}
+      <h4>Nenhum post cadastrado!</h4>
+    {% endif %}
   </main>
 </body>
 </html>
