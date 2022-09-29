@@ -43,3 +43,42 @@ ward
 ### Banco de dados
 
 Vamos usar o [flask-SQLAlchemy](https://flask-sqlalchemy.palletsprojects.com/en/2.x).
+
+
+### Shell
+
+```
+flask shell
+```
+
+```python
+from app import db
+from app.models import Post
+
+db.create_all()
+
+post = Post(
+    title='Curtindo as férias em Salvador',
+    published=True,
+    text='text...'
+)
+db.session.add(post)
+db.session.commit()
+
+Post.query.all()
+```
+
+### Acessando o sqlite
+
+```
+sqlite3 app/betravel.sqlite
+
+.tables
+
+.schema
+
+.headers on
+
+SELECT * FROM post;
+```
+
