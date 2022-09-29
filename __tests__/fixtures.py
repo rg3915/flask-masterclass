@@ -1,7 +1,10 @@
+from dotenv import load_dotenv
 from splinter import Browser
 from ward import fixture
 
 from app import create_app, db
+
+load_dotenv('.env.test')
 
 
 @fixture
