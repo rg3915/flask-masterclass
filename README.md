@@ -85,5 +85,32 @@ SELECT * FROM post;
 ### Migrate
 
 ```
+flask db init
 flask db migrate
+```
+
+Se não conseguir rodar as migrações, então delete o banco sqlite. Então rode o `migrate` novamente.
+
+Por fim, rode
+
+```
+flask db upgrade
+```
+
+Para ver as configurações do projeto rode
+
+```
+flask shell
+
+app.config
+```
+
+### Inserindo dados pelo shell
+
+```
+flask shell
+
+from __tests__.factories.post_factory import PostFactory
+
+PostFactory.create()
 ```
