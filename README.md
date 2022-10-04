@@ -82,3 +82,8 @@ sqlite3 app/betravel.sqlite
 SELECT * FROM post;
 ```
 
+### Migrate
+
+```
+flask db migrate
+```
