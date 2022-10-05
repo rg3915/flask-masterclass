@@ -26,7 +26,7 @@ pip install -r requirements.txt
 flask run
 flask routes
 
-FLASK_ENV=development flask run  # ou
+FLASK_DEBUG=development flask run  # ou
 # FLASK_DEBUG=development flask run
 ```
 
