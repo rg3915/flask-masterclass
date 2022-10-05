@@ -47,3 +47,14 @@ def _(browser=browser):
     browser.visit(url_for('home.index'))
 
     assert browser.is_text_present('Nenhum post cadastrado!')
+
+
+@test('Visitante ve um post.')
+def _(browser=browser):
+    post = PostFactory.create()
+
+    browser.visit(url_for('home.index'))
+    browser.links.find_by_text(post.title).click()
+
+    assert browser.is_text_present(post.title)
+    assert browser.is_text_present(post.text)

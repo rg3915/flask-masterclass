@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <link rel="shortcut icon" href="https://flask.palletsprojects.com/en/1.1.x/_static/flask-icon.png">
-  <title>Flask MasterClass</title>
+  <title>Flask MasterClass | {{ post.title }}</title>
 
   <!-- Bulma -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
@@ -15,14 +15,8 @@
 </head>
 <body>
   <main>
-    <h1>Olá, Flask!</h1>
-    {% if posts %}
-      {% for post in posts %}
-          <a href="{{ url_for('posts.show', id=post.id) }}">{{ post.title }}</a> <br>
-      {% endfor %}
-    {% else %}
-      <h4>Nenhum post cadastrado!</h4>
-    {% endif %}
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.text }}</p>
   </main>
 </body>
 </html>
