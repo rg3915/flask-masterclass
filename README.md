@@ -37,7 +37,8 @@ Ou você pode usar o [python-dotenv](https://pypi.org/project/python-dotenv/) pa
 Para rodar os testes digite
 
 ```
-ward
+ward  # ou
+ward --tags=categories
 ```
 
 ### Banco de dados
