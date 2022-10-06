@@ -108,10 +108,18 @@ app.config
 
 ### Inserindo dados pelo shell
 
-```
+```python
 flask shell
 
 from __tests__.factories.post_factory import PostFactory
 
 PostFactory.create()
+```
+
+Visualizando as categorias
+
+```python
+from app.models import Category
+
+Category.query.all()
 ```

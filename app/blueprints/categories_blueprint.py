@@ -1,10 +1,27 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, redirect, render_template, url_for
 
-from app.models import Post
+from app.extensions import db
+from app.forms import CategoryForm
+from app.models import Category
 
 category = Blueprint('categories', __name__, url_prefix='/categories')
 
 
 @category.get('/new')
 def new():
-    return render_template('categories/new.html')
+    form = CategoryForm()
+    return render_template('categories/new.html', form=form)
+
+
+@category.post('/')
+def create():
+    form = CategoryForm()
+
+    if form.validate_on_submit():
+        category = Category(name=form.name.data)
+        db.session.add(category)
+        db.session.commit()
+
+        return redirect(url_for('home.index'))
+
+    return render_template('categories/new.html', form=form)
