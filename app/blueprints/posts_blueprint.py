@@ -1,4 +1,4 @@
-from flask import Blueprint, redirect, render_template, url_for
+from flask import Blueprint, flash, redirect, render_template, url_for
 
 from app.extensions import db
 from app.forms import PostForm
@@ -32,6 +32,7 @@ def create():
         db.session.add(post)
         db.session.commit()
 
+        flash('Post publicado com sucesso')
         return redirect(url_for('home.index'))
 
     return render_template('posts/new.html', form=form)
