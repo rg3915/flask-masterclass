@@ -130,6 +130,7 @@ Se der erro no sqlite faça
 
 ```
 rm -f app/betravel.sqlite
+rm -rf migrations
 flask db init
 flask db migrate
 flask db upgrade
