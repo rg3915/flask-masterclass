@@ -123,3 +123,15 @@ from app.models import Category
 
 Category.query.all()
 ```
+
+## Erro no sqlite
+
+Se der erro no sqlite faça
+
+```
+rm -f app/betravel.sqlite
+flask db init
+flask db migrate
+flask db upgrade
+```
+

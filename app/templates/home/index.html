@@ -2,6 +2,7 @@
 
 {% block content %}
   <h1>Olá, Flask!</h1>
+
   {% if posts %}
     {% for post in posts %}
       <a href="{{ url_for('posts.show', id=post.id) }}">{{ post.title }}</a> <br>
@@ -9,4 +10,5 @@
   {% else %}
     <h4>Nenhum post cadastrado!</h4>
   {% endif %}
+
 {% endblock content %}
